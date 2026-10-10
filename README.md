@@ -255,6 +255,3 @@ heuristic against labelled data, deployment/export (ONNX/TensorRT).
 *Built and ran a reproducible YOLO11 vs RT-DETR helmet-detection pipeline (Ultralytics, PyTorch, OpenCV): dataset validation,
 sequential Kaggle-T4 training workflow, controlled latency/FPS benchmarking, FP/FN analysis, and an experimental
 rule-based helmet-compliance layer with a unit-tested, uncertainty-aware design (48 tests).* Measured (single seed, 20 epochs, test split): head/helmet mAP@50 ≈ 0.97 for both models; YOLO11-L ≈ 2.1× faster than RT-DETR-L at batch 1 on a T4.
-
-## License
-Code: MIT (see `LICENSE`). Dataset: check the license on the dataset page.
