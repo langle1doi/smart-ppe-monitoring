@@ -1,0 +1,15 @@
+# Dataset root: env PPE_DATASET_ROOT wins over `root`. Folder must contain data.yaml
+# plus train/ valid(or val)/ test/ each with images/ and labels/ (Roboflow "YOLOv8" export).
+root: null
+data_yaml: data.yaml
+output_dir: outputs
+
+# Role -> class name as it appears in the real data.yaml (validated at runtime).
+roles:
+  helmet: helmet
+  head: head
+  person: person
+
+# Hard Hat Workers is public-domain-labelled but verify on the dataset page when you download.
+check_leakage: true      # byte-identical images shared across splits
+min_images: { train: 100, val: 20, test: 20 }   # lower for --smoke datasets via --set

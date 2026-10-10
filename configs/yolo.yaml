@@ -1,0 +1,18 @@
+name: yolo
+family: yolo
+model: yolo11l.pt          # pretrained COCO weights, auto-downloaded by Ultralytics
+dataset_config: configs/dataset.yaml
+runs_dir: outputs/runs
+seed: 0
+train:                      # passed to Ultralytics model.train()
+  imgsz: 640
+  epochs: 50
+  batch: 8
+  workers: 2
+  optimizer: AdamW
+  lr0: 0.001
+  amp: true
+  patience: 15
+  cos_lr: false
+  deterministic: true
+  plots: true

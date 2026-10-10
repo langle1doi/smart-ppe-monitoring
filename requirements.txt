@@ -1,0 +1,12 @@
+# Tested locally: Python 3.11.5, torch 2.5.1+cu124, ultralytics 8.3.27.
+# Install torch/torchvision first from https://pytorch.org (CUDA build matching your driver).
+# On Kaggle, torch is preinstalled - do not reinstall it.
+ultralytics==8.3.27
+opencv-python==4.11.0.86
+numpy==1.26.4
+PyYAML==6.0.3
+pandas==2.2.2
+matplotlib==3.8.3
+streamlit==1.64.0
+# dev
+pytest==9.1.1

@@ -1,0 +1,25 @@
+dataset_config: configs/dataset.yaml
+device: auto                # auto | cpu | cuda:0
+imgsz: 640
+conf: 0.25                  # deployment-style threshold used for inference/benchmark/error analysis
+iou: 0.7                    # NMS IoU for YOLO; ignored by RT-DETR (no NMS)
+metrics_dir: outputs/metrics
+models:
+  yolo:   { weights: outputs/runs/yolo/weights/best.pt }
+  rtdetr: { weights: outputs/runs/rtdetr/weights/best.pt }
+benchmark:
+  split: test
+  num_images: 200
+  warmup: 20
+# Safety layer (EXPERIMENTAL, see README). Roles refer to dataset.yaml `roles`.
+compliance:
+  helmet_class: helmet
+  head_class: head
+  person_class: person
+  evidence_conf: 0.5        # detections at/above this count as evidence
+  weak_conf: 0.25           # between weak and evidence -> uncertain; below weak -> ignored
+  head_region_frac: 0.4     # top fraction of a person box treated as the head region
+  head_region_margin: 0.1   # extend region upward by this fraction of person height
+  min_overlap: 0.5          # fraction of a head/helmet box that must lie in the head region
+  min_person_height_px: 48
+  min_head_height_px: 16

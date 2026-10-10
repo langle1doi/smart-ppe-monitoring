@@ -1,0 +1,20 @@
+__pycache__/
+*.pyc
+.env
+.venv/
+*.egg-info/
+.pytest_cache/
+# datasets, weights, generated artifacts
+/data/
+/datasets/
+*.pt
+*.pth
+*.onnx
+*.engine
+outputs/*
+!outputs/.gitkeep
+runs/
+*.mp4
+*.avi
+*.stackdump
+.playwright-mcp/

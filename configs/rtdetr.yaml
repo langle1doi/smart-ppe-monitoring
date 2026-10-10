@@ -1,0 +1,18 @@
+name: rtdetr
+family: rtdetr
+model: rtdetr-l.pt         # pretrained COCO weights, auto-downloaded by Ultralytics
+dataset_config: configs/dataset.yaml
+runs_dir: outputs/runs
+seed: 0
+train:
+  imgsz: 640                # same as YOLO
+  epochs: 50                # same budget as YOLO
+  batch: 8
+  workers: 2
+  optimizer: AdamW          # same optimizer family as YOLO
+  lr0: 0.0001               # DOCUMENTED DIFFERENCE: transformer decoder needs a smaller LR
+  amp: true
+  patience: 15
+  cos_lr: false
+  deterministic: true
+  plots: true
